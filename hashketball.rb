@@ -189,14 +189,15 @@ end
 
 def player_stats(name)
 
-   game_hash.each do |team_origin, team_info|
+game_hash.each do |team_origin, team_info|
   
-    team_info[:players].each do |player_name, player_attribute|
+  team_info[:players].each do |player_name, player_attribute|
     
-   game_hash.each do |team_origin, team_attribute|
-    team_attribute[:players].each do |player_name, player_attribute|
-     if player_name == name
-      return player_attribute
+    game_hash.each do |team_origin, team_attribute|
+      team_attribute[:players].each do |player_name, player_attribute|
+        if player_name == name
+           return player_attribute
+        end
      end 
     end 
   end 
