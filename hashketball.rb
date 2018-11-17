@@ -142,6 +142,7 @@ def shoe_size(name)
   end 
 end  
   
+<<<<<<< HEAD
 def player_numbers(team_name)
   num = []
    game_hash.each do |team_origin, team_attribute|
@@ -152,6 +153,18 @@ def player_numbers(team_name)
      end 
    end
   num.sort
+=======
+def player_numbers(team)
+  players_num = []
+   game_hash.each do |team_origin, team_attribute|
+    team_attribute[:players].each do |player_name, player_attribute|
+      #if player_name == name
+         players_num << player_attribute[:number]
+      #end 
+    end 
+    return players_mun.sort
+  end 
+>>>>>>> 4cc9d3e1cad4b04d9d2f1e5fbf9f6d826318060d
 end
   
 def team_colors(team_name)
@@ -175,10 +188,13 @@ end
 
 
 def player_stats(name)
+
    game_hash.each do |team_origin, team_info|
   
     team_info[:players].each do |player_name, player_attribute|
     
+   game_hash.each do |team_origin, team_attribute|
+    team_attribute[:players].each do |player_name, player_attribute|
      if player_name == name
       return player_attribute
      end 
